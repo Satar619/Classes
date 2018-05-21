@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+  <head>
+	<meta charset='utf-8'>
+	<meta name='viewport' value='width=device-width, initial-scale=1'>
+	<title>Database JOIN examples</title>
+	<style>
+	.code {
+	  font-family: monospace;
+		background-color: #eee;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: 1px solid #ccc;
+	}
+	.prompt {
+	  font-family: monospace;
+		color: #aaa;
+		background-color: #eee;
+		padding: 0.1rem 0.3rem;
+	}
+	.redbg {
+	  background-color: #fcc;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: #f00;
+	}
+	.greenbg {
+	  background-color: #cfc;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: #0f0;
+	}
+	.greybg {
+	  background-color: #f4f4f4;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: #333;
+	}
+	.bluebg {
+	  background-color: #00f;
+		color: #fff;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: #333;
+	}
+	.lightbluebg {
+	  background-color: #0ff;
+		padding: 0.3rem;
+		margin: 0.2rem 1rem;
+		border: #333;
+	}
+	table {
+	  border-collapse: collapse;
+	}
+	tr {
+	  border: 1px solid black;
+	}
+	td {
+	  padding: 0.2rem 0.5rem;
+		text-align: center;
+	}
+	</style>
+	</head>
+  <body>
+	<h1>Database JOIN examples</h1>
+	<h2>Intro</h2>
+	<p>This is a very simple example to visualize how to use SELECT with JOIN.</p>
+	<p>When we say to enter a command on the prompt we make the following assumptions:
+	<ul>
+	  <li>We are running the mysql client.</li>
+		<li>We see the prompt, usually <span class='code'>mysql&gt;</span><br>
+		The prompt is what the computer is showing to tell the user (to prompt him/her)
+		that the computer is ready to take commands.</li>
+		<li>On this page the commands include the prompt. On the commands.sql file
+		the prompt is not included. We don't enter the prompt with the command. It is
+		shown here to make it more clear and if we enter it we will get back an error
+		message. It is in a different color than the rest of the command, like
+		this: <span class='prompt'>mysql&gt; </span></li>
+	</ul>
+	<h2>Create database and populate it with data</h2>
+	We use the commands from file <a href='./commands.sql'>commands.sql</a>. We
+	can copy-paste the commands inside the mysql client or if we want ro we can
+	source them. To do that we use the following command:
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>source commands.sql
+	</div>
+	Beware that we should provide the full path of the file. If we are not able to
+	do that, please copy-paste.</p>
+	<h2>What is a JOIN?</h2>
+	<p>To better understand how the tables are JOINed first we make an example with
+	2 tables. The red table containing pets and the green table with the owners.</p>
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>SELECT * FROM pets;
+	</div>
+	<p>and we get back the following table:</p>
+	<table class='redbg'>
+	  <thead>
+		  <tr><th>id</th><th>name</th><th>species</th><th>owner</th></tr>
+		</thead>
+		<tbody>
+		  <tr><td>1</td><td>Fafner</td><td>dragon</td><td>3</td></tr>
+      <tr><td>2</td><td>Errol</td><td>cat</td><td>2</td></tr>
+      <tr><td>3</td><td>Glaurung</td><td>cat</td><td>2</td></tr>
+      <tr><td>4</td><td>Katla</td><td>snail</td><td>1</td></tr>
+		<tbody>
+	</table>
+	<p>Then enter:</p>
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>SELECT * FROM owners;
+	</div>
+	<p>and we get back the following table:</p>
+	<table class='greenbg'>
+	  <thead>
+		  <tr><th>id</th><th>name</th></tr>
+		</thead>
+		<tbody>
+		  <tr><td>1</td><td>Cheng Chui Ping</td></tr>
+      <tr><td>2</td><td>Jacquotte Delahaye</td></tr>
+      <tr><td>3</td><td>Anne Dieu-le-Veut</td></tr>
+      <tr><td>4</td><td>Ching Shih</td></tr>
+		<tbody>
+	</table>
+	<p>To understand the JOINing enter the following command:
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>SELECT * FROM pets JOIN owners;
+	</div>
+	<p>and the result is...(with grey background is repeated information)</p>
+	<table>
+	  <thead>
+		  <tr>
+			  <th class='redbg'>id</th>
+			  <th class='redbg'>name</th>
+			  <th class='redbg'>species</th>
+			  <th class='redbg'>owner</th>
+			  <th class='greenbg'>id</th>
+			  <th class='greenbg'>name</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>1</td>
+			  <td class='greenbg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>2</td>
+			  <td class='greenbg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>3</td>
+			  <td class='greenbg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>4</td>
+			  <td class='greenbg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		</tbody>	
+  </table>
+	<p>Now if we want to find the owners of the cats we JOIN the two tables
+	on the point where the pet's owner exists. That is, the pet's owner id is
+	an id value from the owners table. So the two values must be equal. Let's
+	see the previous table (from the JOIN) and take a closer look where this
+	is happening (we have the cells in blue background):</p>
+	<table>
+	  <thead>
+		  <tr>
+			  <th class='redbg'>id</th>
+			  <th class='redbg'>name</th>
+			  <th class='redbg'>species</th>
+			  <th class='redbg'>owner</th>
+			  <th class='greenbg'>id</th>
+			  <th class='greenbg'>name</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>1</td>
+			  <td class='greenbg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='bluebg'>1</td>
+			  <td class='bluebg'>1</td>
+			  <td class='greybg'>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>2</td>
+			  <td class='greenbg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='bluebg'>2</td>
+			  <td class='bluebg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='bluebg'>2</td>
+			  <td class='bluebg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>2</td>
+			  <td class='greybg'>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='bluebg'>3</td>
+			  <td class='bluebg'>3</td>
+			  <td class='greenbg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>3</td>
+			  <td class='greybg'>Anne Dieu-le-Veut</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>1</td>
+			  <td class='redbg'>Fafner</td>
+			  <td class='redbg'>dragon</td>
+			  <td class='redbg'>3</td>
+			  <td class='greenbg'>4</td>
+			  <td class='greenbg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>2</td>
+			  <td class='redbg'>Errol</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>3</td>
+			  <td class='redbg'>Glaurung</td>
+			  <td class='redbg'>cat</td>
+			  <td class='redbg'>2</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		  <tr>
+			  <td class='redbg'>4</td>
+			  <td class='redbg'>Katla</td>
+			  <td class='redbg'>snail</td>
+			  <td class='redbg'>1</td>
+			  <td class='greybg'>4</td>
+			  <td class='greybg'>Ching Shih</td>
+			</tr>
+		</tbody>	
+  </table>
+	<p>We can express this using SQL (the language) with the following command:</p>
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>SELECT * FROM pets JOIN owners ON pets.owner=owners.id;
+	</div>
+	<p>and we get back just the 4 rows that had blue background.</p>
+	<table class='lightbluebg'>
+	  <thead>
+		  <tr>
+			  <th>id</th>
+			  <th>name</th>
+			  <th>species</th>
+			  <th>owner</th>
+			  <th>id</th>
+			  <th>name</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <tr>
+			  <td>4</td><td>Katla</td><td>snail</td><td>1</td>
+				<td>1</td><td>Cheng Chui Ping</td>
+			</tr>
+		  <tr>
+			  <td>2</td><td>Errol</td><td>cat</td><td>2</td>
+				<td>2</td><td>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td>3</td><td>Glaurung</td><td>cat</td><td>2</td>
+				<td>2</td><td>Jacquotte Delahaye</td>
+			</tr>
+		  <tr>
+			  <td>1</td><td>Fafner</td><td>dragon</td><td>3</td>
+				<td>3</td><td>Anne Dieu-le-Veut</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Then we can combine that with a WHERE clause to find who has a snail,
+	by entering the following:</p>
+	<div class='code'>
+	  <span class='prompt'>mysql&gt; </span>SELECT * FROM pets JOIN owners ON pets.owner=owners.id WHERE pets.species='snail';
+	</div>
+	<p>and the result is...</p>
+	<table class='greybg'>
+	  <thead>
+		  <tr>
+			  <th>id</th>
+			  <th>name</th>
+			  <th>species</th>
+			  <th>owner</th>
+			  <th>id</th>
+			  <th>name</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <tr>
+			  <td>4</td><td>Katla</td><td>snail</td><td>1</td>
+				<td>1</td><td>Cheng Chui Ping</td>
+			</tr>
+	  </tbody>
+	</table>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Choose movie</title>
+</head>
+<body>
+<p>Well, 2 very different films. But please make your selection.<br>
+<form method='get' action='http://localhost:8080/selection'>
+  <input type='radio' name='movie' value='lostHighway' checked>Lost Highway</input><br>
+	<input type='radio' name='movie' value='tetsuoII'>Tetsuo II</input><br>
+	<input type='submit' value='Learn more'>
+</form>
+</p>
+<p>About this form... The implemantation (see the source code) of this is
+a form element. It contains 2 radio buttons. The first one is already checked.
+The submit button is used to submit the form. When we press it the form is
+submitted with the method specified in the form's method attribute. This is
+an HTTP verb (GET, PUT, POST, ...) and the form (the data of the form) is
+submitted in the address specified on the form's action attribute.
+</p>
+<p>Note: The form is data... Actually form elements where included to HTML
+to enable us to submit data.</p>
+<p>Note 2: When we run the server part (after we run
+<span style='font-family: monospace'>node index.js</span>) check
+what is happening when we press submit. The form's action value is
+selection and the name attiribute of the radio buttons is movie. Now see the
+address we go to after we press submit</p>
+</body>
+</html>

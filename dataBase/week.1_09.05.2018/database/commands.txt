@@ -1,0 +1,72 @@
+- To enter all the contents of a file to the DBMS use the source command.
+  For example if we have a file in Windows:
+	
+	mysql>  source "c:\Users\username\Desktop\filename.sql
+	
+	or in Linux
+	
+	mysql> source /home/username/Desktop/filename.sql
+
+- Another way to enter the contents of the file is to copy paste them.
+
+-----------------------------------------------------------------------------
+
+Necessary steps to populate the database with the United Nations data:
+
+Step 1: Create a database and use it. For example:
+        mysql> CREATE DATABASE UNmembers;
+				mysql> USE UNmembers;
+
+Step 2: Copy the un.sql file somewhere. Be prepared to provide the path to
+        the next command.
+				
+Step 3: mysql> source path\un.sql (in Windows)
+        mysql> source path/un.sql (in Linux)
+				
+------------------------------------------------------------------------------
+
+Now that we have the data in the database we can use SELECT and other commands.
+Examples ( I use JavaScript style comments):
+  
+mysql> SHOW TABLES;
+
+mysql> DESCRIBE unitedNations;
+
+mysql> SELECT name, internetTLD FROM unitedNations;
+
+mysql> SELECT name, internetTLD FROM unitedNations LIMIT 10;
+
+mysql> SELECT name, population FROM unitedNations ORDER BY population;
+
+mysql> SELECT name, population FROM unitedNations ORDER BY population DESC;
+
+mysql> SELECT name, population FROM unitedNations ORDER BY population DESC LIMIT 3;
+
+mysql> SELECT COUNT(*) FROM unitedNations;
+// Return how many there are
+
+mysql> SELECT COUNT(name) FROM unitedNations;
+// Count them based on the column name. Include duplicates
+
+mysql> SELECT COUNT(DISTINCT name) FROM unitedNations;
+// As before but count as 1 the values that are exactly the same in different rows.
+
+mysql> SELECT COUNT(DISTINCT admissionDate) FROM unitedNations;
+// As before but now we see that for some nations the value of admissionDate is the same.
+
+// to make it more clear
+mysql> SELECT admissionDate FROM unitedNations;
+mysql> SELECT admissionDate FROM unitedNations ORDER BY admissionDate DESC;
+mysql> SELECT DISTINCT admissionDate FROM unitedNations ORDER BY admissionDate DESC;
+
+mysql> SELECT id,name FROM unitedNations WHERE admissionDate='1945-10-24';
+
+mysql> SELECT COUNT(name), admissionDate FROM unitedNations GROUP BY admissionDate;
+// Show how many countries admitted members in each date
+
+mysql> SELECT COUNT(name) AS 'Number of countries', admissionDate FROM unitedNations GROUP BY admissionDate;
+// As before but name the first column 'Number of countries' by using the AS
+// To make it more clear enter both commands with LIMIT. For example:
+mysql> SELECT COUNT(name), admissionDate FROM unitedNations GROUP BY admissionDate LIMIT 4;
+mysql> SELECT COUNT(name) AS 'Number of countries', admissionDate FROM unitedNations GROUP BY admissionDate LIMIT 4;
+

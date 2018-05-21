@@ -1,0 +1,107 @@
+0. This all applies if we want to create a new user with the username
+   nodetodoapp and password equal to mypassword to be able to modify data
+   but no create, drop, or alter tables and stores procedures on the
+   database named todo_app.
+
+1. First we login normally to mySQL using the MySQL Client
+   and check what username we logged in with (at this point it
+   is the user we created during installation)
+
+SELECT USER();
+
+Result:
+
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+2. We change database to see what users exist on mysql DBMS:
+
+USE mysql;
+SELECT user FROM user;
+
+3. Then we create our new user:
+
+CREATE USER 'nodetodoapp'@'localhost' IDENTIFIED BY 'mypassword';
+
+Repeat Step 2 to see that the user got created.
+
+4. Check what databases exist on the DBMS with:
+
+SHOW DATABASES;
+
+On the results we are supposed to have already created the database
+named todo_app since this is the database we want to use the new
+user for.
+
+5. Give to the new user (nodetodoapp) permissions
+
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE, TRIGGER on todo_app.* TO 'nodetodoapp'@'localhost';
+
+and flush privileges with
+
+FLUSH PRIVILEGES;
+
+6. Connect on the DBMS with the new account.
+  - For windows:
+    - Open a Command Prompt (the terminal).
+      On Windows 7 it is on Start -> Accessories -> Command prompt
+    - Change directory with the following command on the prompt
+      cd "C:\Program Files\MySQL\MySQL Server 5.7\bin\"
+
+      (This is for version 5.7 of MySQL. I guess version 8 will
+       be a little bit different. Go to My Computer, C drive, Program Files
+       to see the correct path)
+    - Open the MySQL Client and connect to the DBMS with the following
+      command (notice that near the end it has -unodetodoappuser that is
+      the -u parameter and the user name. By default this is -uroot)
+
+      mysql.exe "--defaults-file=C:\ProgramData\MySQL\MySQL Server 5.7\my.ini" "-unodetodoapp" "-p"
+
+      Also notice that the path is correct. If not change the 5.7 with the
+      correct version
+
+  - For Linux:
+    - Open a terminal.
+    - Enter mysql -u nodetodoapp -p
+
+7. See the available databases.
+
+SHOW databases;
+
+and use the one we want to use:
+
+USE todo_app;
+
+Try to create a new table with:
+
+CREATE TABLE test_table (id INTEGER AUTO_INCREMENT,
+  description VARCHAR(255),
+  PRIMARY KEY(id));
+
+and it should tell us that the command is denied.
+
+7a. See the available databases.
+
+SHOW databases;
+
+The one we want to use (todo_app) is not there...
+
+We try to create a new one with
+
+CREATE DATABASE todo_app;
+
+and we get access denied message. This happened because we didn't do
+Step 5 (didn't give enough permissions to the new user).
+
+
+
+UPDATE:
+      SELECT * FROM users WHERE id=6
+      UPDATE USER set last_name='papadakis' WHERE id=6
+      SELECT * FROM user WHERE last_name='papadakis';
+
+

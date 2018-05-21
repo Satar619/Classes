@@ -1,0 +1,11 @@
+{
+  "name": "oldapp",
+  "version": "1.0.0",
+  "description": "A app with a form. An example of a not SPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dasoda.hae@aol.com",
+  "license": "GPL-3.0"
+}
