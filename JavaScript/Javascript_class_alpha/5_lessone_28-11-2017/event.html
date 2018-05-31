@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Basic DOM Manipulation">
+  <meta name="author" content="John Tsevdos">
+
+  <title>Events demo page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <style>
+    h2 {
+      margin: 2em 0 1em;
+    }
+
+    .grey {
+      background: #ccc;
+    }
+
+    .green {
+      background: #5cb85c;
+    }
+
+    .blue {
+      background: #5bc0de;
+    }
+
+    .orange {
+      background: #f0ad4e;
+    }
+
+    .red {
+      background: #d9534f;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="margin: 1em 0 0;">Events demo page</h1>
+
+    <hr>
+
+    <h2>Background Changer</h2>
+    <button id="bg-color-changer" type="button" class="btn btn-primary btn-lg">Change background color</button>
+
+    <hr>
+
+    <h2>Typewritter</h2>
+    <div class="form-group">
+      <input id="typewritter" type="text" class="form-control" placeholder="Type here!">
+      <div id="typewritter-output" class="lead font-weight-bold"></div>
+    </div>
+
+    <h2>Image swap</h2>
+    <div>
+      <img id="image-swap" src="wolf.jpg" class="rounded" alt="my image">
+    </div>
+
+  </div>
+
+  <script>
+    const input = document.querySelector('#typewritter');
+
+
+    input.addEventListener('keyup',
+      function(event) {
+        const output = document.querySelector('#typewritter-output');
+        console.log(event.target.value);
+        output.innerHTML = event.target.value;
+
+      });
+    const img = document.querySelector('#image-swap');
+    img.addEventListener('mouseenter', function() {
+      img.src = "white-wolf.jpg"
+    })
+    img.addEventListener('mouseleave', function() {
+      img.src = "wolf.jpg"
+    });
+  </script>
+</body>
+
+</html>

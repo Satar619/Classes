@@ -1,0 +1,49 @@
+.imgTag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, .2);
+  filter: alpha(opacity=20);
+}
+
+.myH1 {
+  font-style: italic;
+  font-family: 'Kavivanar', cursive;
+  text-align: center;
+  text-shadow: 2px 2px 8px #FF0000;
+  position: fixed;
+  left: 40%;
+}
+
+/* ul  */
+
+.firstul {
+  list-style-type: decimal;
+  padding-top: 80px;
+}
+
+/*                Div making wrap                  */
+
+#container {
+  display: inline-block;
+}
+
+.ulClass {
+  padding-left: 10px;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.ulClass li {
+  width: 250px;
+  height: 250px;
+  float: left;
+  margin: 0px 15px 15px 0px;
+  list-style-type: none;
+}

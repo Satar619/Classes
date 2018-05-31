@@ -1,0 +1,29 @@
+/* 
+Use Roboto font family for html and body contents
+*/
+html, body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.smart {
+  background-color: green;
+  color: white;
+}
+
+.strong {
+  background-color: blue;
+  color: white;
+}
+
+.careless {
+  background-color: red;
+  color: white;
+}
+
+/*
+Introduce additional style in each hero
+*/
+p, ul {
+  padding: 10px;
+  border-radius: 5px;
+}

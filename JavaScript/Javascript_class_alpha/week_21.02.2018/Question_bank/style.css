@@ -1,0 +1,58 @@
+body {
+  margin: 0px 0px 0px 0px;
+  background-image: url("parchment-background.jpg");
+}
+
+.header {
+  background-color: #E9E0DB;
+  margin: 0;
+  padding-left: 90px;
+}
+
+h1 {
+  font-family: 'Kavivanar', cursive;
+}
+
+nav {
+  margin-right: 20px;
+  list-style-type: none;
+  display: block;
+  margin-left: 70%;
+}
+
+a {
+  padding-left: 20px;
+}
+
+.contiener {
+  display: inline-block;
+  margin: 20px 0 0 50px;
+  clear: both;
+}
+
+h4 {
+  padding-left: 70%;
+}
+
+.QuestionInfo li {
+  height: 30px;
+  line-height: 30px;
+  list-style-type: none;
+  padding-left: 50px;
+}
+
+#Edit {
+  width: 60%;
+}
+
+input {
+  padding-left: 40px;
+}
+
+#submit {
+  padding-left: 50%;
+}
+
+#SUBMIT:hover {
+  background-color: #A3481B;
+}

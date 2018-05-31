@@ -1,0 +1,104 @@
+/*
+                          1. Variables & constants
+
+  let age=16;
+  const name ="satar";
+
+  let ismarried= false;
+  age=1 + age;
+
+   yes it is posible cause we can add variable name down and change with more or less.
+   we cant change the variable name after initialized.
+
+
+                       2. Variable types
+
+2a:  Number.
+2b:  string.
+2c:  bool.
+2d:  Number.
+2e:  typeof "hello".
+2f:  Boleame.
+2g:  we can just areace the speech mark.
+2h:  add speech mark (any thing inside speech mark is string and without this is Number, date, Boleame and etc)
+
+
+                        3. Null, undefined and NaN
+
+3a:  undefined means a variable has been declared but has not yet been assigned a value.
+3b:  NaN means not a number , when some mathematical operation failed. You wanted to check if NaN == null which results false (I want to know more about NaN)
+3c:  its Boleame
+3d:  undefined.
+3e:  Number
+3f:  ???????????
+3g:  x==4 is corect cause x===4 is not definde
+3h:  x===null is corect. I dont know how but google says I want more info about
+
+                         4. Maths & strings
+
+4a:
+4b:   11
+4c:   (3 + 4) * 2
+4d:   6
+4e:   20 -( 8 - 2) - 4
+4f:   hello,world
+4g:   we should never write like that its complatly wrong.
+
+
+                          5. Booleans
+5a:   Boleame
+5b:   false
+5c:   false
+5d:   true
+5e:   false
+5f:   true
+5g:   Boleame
+5h:   ???????
+5i:   ???????
+5j:   ???????
+5k:   ???????
+5l:   a=true
+5m:   b=false
+
+                          6. Arrays
+
+6a    let arr1=[ ]
+6b    3
+6c    arr [1] = 7
+6d    let arr =[20 , 8 , 1];   -  arr.push(2);         -    console.log(arr);
+6e    let arr =[20 , 8 , 1];   -  arr.unshift(12);     -    console.log(arr);
+6f    let arr =[20 , 8 , 1];   -  console.log(arr[0] );
+6g    let arr =[20 , 8 , 1];   -  console.log(arr);
+6h
+6i    yes we can add.
+6j    NO
+6k    3
+6l    false
+6m    true
+6n    ????????
+
+                            7. Functions
+a    Function four(4) {   return 4;    }
+b    undefined
+c    ????????
+d   2
+e   2
+f   ????????
+g   ????????
+h   ????????
+i   ????????
+j   ????????
+
+
+                            8. Finale
+
+a false
+b let arr=["How" , "are" , "you" , "man"]   -    console.log(arr[3]);
+c
+d
+e
+f
+g
+h
+ 
+*/
