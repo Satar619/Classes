@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: Roboto,sans-serif;
+  line-height: 1.6;
+  color: #424242;
+}
+ *{
+      box-sizing: inherit;
+}
+a {
+  background-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+header {
+    background-color: transparent;
+    /*height: 5.0625rem;*/
+    display: block;
+    padding-bottom: .625rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+      /*     Marketing Resources      */
+.mark {
+    position: relative;
+    display: inline-block;
+    margin-left: 19px;
+}
+.marketing {
+    display: none;
+    position: absolute;
+    background-color: #F2F3F4;
+    min-width: 160px;
+    padding: 15px 20px;
+    z-index: 1;
+}
+.marketing a {
+    background: #f5f5f5;
+    height: 0;
+    left: 0;
+    max-width: 17.5rem;
+    min-width: 14.375rem;
+    overflow: hidden;
+}
+.mark:hover .marketing {
+    display: block;
+}
+.mark:hover .spa {
+  background-color: #F2F3F4;
+}
+.marketing a:hover { background-color: #E5E7E9 }
+        /*       Advertising Channels         */
+.Advertising {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+.Advertising-Channels {
+    display: none;
+    position: absolute;
+    background-color: #F2F3F4;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.Advertising:hover .Advertising-Channels {
+    display: block;
+}
+.Advertising:hover .spa {
+  background-color: #F2F3F4;
+}
+.centerlink {
+    float: right;
+    padding-right: 7rem;
+    font-family: Roboto,sans-serif;
+    font-size: 17px;
+    height: 3.8125rem;
+  }
+  .line1 {
+    margin: 0;
+    background-image: url("mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right;
+    padding-bottom: 100px;
+  }
+  .line2 {
+    width: 100%;
+  }
+  .line3 h1 {
+    margin-left: 8.5298%;
+    float: left;
+    font-size: 2.4375rem;
+    line-height: 1.4;
+    padding-top: 5rem;
+    font-weight: 300;
+  }
+  .link2 p {
+    background-color: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: #3367d6;
+    font-size: .875rem;
+    font-weight: 500;
+  }
+  .link2 {
+    padding-top: 16rem;
+    padding-left: 70rem;
+  }
+  .link2 img {
+    width: 5%;
+  }
+              /*      flex box        */
+.flex2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #ECEEF1;
+    margin-top: 0;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    font-size: 1.125rem;
+    font-family: 'Roboto', sans-serif;
+}
+p {
+  font-size: .875rem;
+  color: #757575;
+  text-align: center;
+}
+h4 {
+  color: #424242;
+  font-weight: 400;
+  text-align: center;
+}
+.first1 {
+  color: white;
+  font-weight: 400;
+  margin-left: 30px;
+  margin-top: 200px;
+  text-align: left;
+}
+.last1 {
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 30px
+}
+.flex2 .flex3:nth-child(1) {
+    background-image: url("oldman.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: center;
+    width: 670px;
+    height: 340px;
+    margin: 13px;
+}
+.flex2 .flex3:nth-child(n+2) {
+    background-color: white;
+    width: 328px;
+    height: 340px;
+    margin: 10px;
+}
+.flex2 .flex3:nth-child(6) {
+  background-image: url("flex6.jpg");
+  background-size: cover;
+  width: 670px;
+  height: 340px;
+}
+.text2, .text3, .text4, .text5 {
+  margin-top: 25px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.img2 {
+  background-image: url("flex2.jpg");
+  background-size: cover;
+  height: 50%;
+}
+.img3 {
+  background-image: url("flex3.jpg");
+  background-size: cover;
+  height: 50%;
+}
+.img4 {
+  background-image: url("flex4.jpg");
+  background-size: cover;
+  height: 50%;
+}
+.img5 {
+  background-image: url("flex5.jpg");
+  background-size: cover;
+  height: 50%;
+}
+.flex1 h2 {
+  display: block;
+  font-size: 1.9375rem;
+  font-weight: 300;
+  padding-left: 2.5%;
+  margin: 0;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  background-color: #ECEEF1;
+}
+        /*             links               */
+.flex00 {
+  display: flex;
+   width: 100%;
+   height: 100%;
+   background-color: #F5F5F5;
+}
+.flex01 {
+  background-color: transparent;
+  width: 30%;
+  margin: 10px;
+}
+#h2last {
+  background-color: #F5F5F5;
+  font-size:  1.9375rem;
+  color: #424242;
+  margin: 0;
+  font-weight: lighter;
+  padding-left: 2.5%;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+ul {
+  list-style-type: none;p
+
+}
+h1 {
+  font-size: 1.25rem;
+  padding-left: 9%;
+}
+.spans {
+  margin-left: 0.7%;
+}
+#lastp {
+  color: #424242;
+  padding-left: 9%;
+  text-align: left;
+}
+    /*           Boxes                */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+  margin: 0;
+}
+.box {
+  width: 328px;
+  height: 340px;
+  margin: 10px;
+  background-color: #fff;
+}
+.as a {
+  color: #757575;
+}
+h4 {
+  text-align: left;
+  font-size: 1.125rem;
+  margin: 0;
+}
+.imgbox {
+  background-image: url("box1.png");
+  background-size: cover;
+  height: 50%;
+}
+.foot {
+   color: lightblue;
+   background-color: lightblue;
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+   padding-left: 3rem;
+   padding-right: 3rem;
+
+  }

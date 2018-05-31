@@ -1,0 +1,20 @@
+.donate {
+    border: 2px solid #AF0707;
+    margin: 0;
+	  padding-top: 0.5%;
+	  padding-bottom: 0.5%;
+    background: #E11517;
+    width: 7%;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+}
+h1:hover {
+  background-color: #F8AEAE;
+  color: white;
+} /* only to be like center*/
+div {
+  padding-left:200px;
+  padding-top: 50px;
+}

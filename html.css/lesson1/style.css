@@ -1,0 +1,50 @@
+body{
+	background-color: #808080;
+	color:white;
+	text-shadow: 1px 1px 20px black;
+}
+@media all and (max-width: 1000px) and (min-width: 100px){
+  #wrestling {
+	background: red;
+	
+  }
+}
+h1{
+	color: goldenrod;
+	text-align:center;
+}
+.nature{
+      float: right;
+}
+#lastline{
+        font-style: italic;
+        text-align: left;
+	font-size: 200%;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 33%;
+    height: 330%;
+    background-color: lightgrey;
+}
+
+.flex-item {
+    background-color: #808080;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    overflow: auto;
+}
+ul {
+    list-style-type: none;
+}
+#wrestling {
+	font-size:30px;
+	text-shadow: 1px 1px 80px white;
+}
+#info{
+	background-color: #FFCC99;
+        width:100%;
+        margin:auto;	
+}

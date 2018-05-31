@@ -1,0 +1,265 @@
+1. Choose the correct HTML element for the largest heading:
+
+<h6>
+<head>
+<heading>
+<h1>      *true
+ 
+2. What is the correct HTML element for inserting a line break?
+
+<break>
+<lb>
+<br>  *true
+ 
+3. What is the correct HTML for adding a background color?
+
+ <body style="background-color:yellow;">      *true
+ <body bg="yellow">
+ <background>yellow</background>
+ 
+4. Choose the correct HTML element to define important text
+
+ <b>
+ <i>
+ <strong>
+ <important>    *true
+ 
+5. Choose the correct HTML element to define emphasized text
+
+ <i>
+ <em>       *true
+ <italic>
+ 
+6. What is the correct HTML for creating a hyperlink?
+
+ <a>http://www.w3schools.com</a>
+ <a href="http://www.w3schools.com">W3Schools</a>       *true
+ <a url="http://www.w3schools.com">W3Schools.com</a>
+ <a name="http://www.w3schools.com">W3Schools.com</a>
+ 
+7. Which character is used to indicate an end tag?
+
+ *
+ ^
+ <
+ /       *true
+ 
+8. Inline elements are normally displayed without starting a new line.
+
+ True       *true
+ False
+ 
+9. How can you make a numbered list?
+
+ <list>
+ <ul>
+ <dl>
+ <ol>       *true
+ 
+10. How can you make a bulleted list?
+
+ <dl>
+ <ul>       *true
+ <ol>
+ <list>
+ 
+11. What is the correct HTML for inserting an image?
+
+ <img src="image.gif" alt="MyImage">       *true
+ <image src="image.gif" alt="MyImage">
+ <img href="image.gif" alt="MyImage">
+ <img alt="MyImage">image.gif</img>
+ 
+12. What is the correct HTML for inserting a background image?
+
+ <background img="background.gif">
+ <body style="background-image:url(background.gif)">       *true
+ <body bg="background.gif">
+ 
+13. HTML comments start with <!-- and end with -->
+
+ True       *true
+ False
+ 
+14. Block elements are normally displayed without starting a new line.
+
+ False       *true
+ True
+ 
+15. Which HTML element defines the title of a document?
+
+ <title>       *true
+ <head>
+ <meta>
+ 
+16. Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?
+
+ longdesc
+ alt       *true
+ title
+ src
+ 
+17. Which HTML element is used to specify a footer for a document or section?
+
+ <bottom>
+ <footer>       *true
+ <section>
+ 
+18. In HTML, you can embed SVG elements directly into an HTML page.
+
+ False       *true
+ True
+ 
+19. What is the correct HTML element for playing video files?
+
+ <movie>
+ <media>                    I need to learn about video
+ </video>
+ <video>
+ 
+20. In HTML, onblur and onfocus are:
+
+ HTML elements
+ Style attributes
+ Event attributes
+ 
+21. Which HTML element defines navigation links?
+
+ <nav>       *true
+ <navigate>
+ <navigation>
+ 
+22. In HTML, what does the <aside> element define?
+
+ A navigation list to be shown at the left side of the page
+ Content aside from the page content               *true
+ The ASCII character-set; to send information between computers on the Internet
+ 
+23. Which HTML element is used to specify a header for a document or section?
+
+ <head>
+ <section>
+ <header>       *true
+ <top>
+ 
+24. What does CSS stand for?
+
+ Creative Style Sheets       *true
+ Colorful Style Sheets
+ Cascading Style Sheets
+ Computer Style Sheets
+ 
+25. What is the correct HTML for referring to an external style sheet?
+
+ <style src="mystyle.css">      
+ <link rel="stylesheet" type="text/css" href="mystyle.css">       *true
+ <stylesheet>mystyle.css</stylesheet>
+ 
+26. Where in an HTML document is the correct place to refer to an external style sheet?
+
+ In the <head> section              *true
+ At the end of the document
+ In the <body> section
+ 
+27. Which HTML tag is used to define an internal style sheet?
+
+ <style>              *true
+ <css>       
+ <script>
+ 
+28. Which HTML attribute is used to define inline styles?
+
+ class
+ font
+ style       *true
+ styles
+
+29. Which of these is the correct CSS?
+
+ body:color=black;
+ {body;color:black;}
+ {body:color=black;}
+ body {color: black;}        *true
+ 
+30. How do you insert a comment in a CSS file?
+
+ // this is a comment //
+ // this is a comment
+ ' this is a comment
+ /* this is a comment */       *true
+ 
+31. Which property is used to change the background color?
+
+ bgcolor
+ background-color       *true
+ color
+ 
+32. How do you add a background color for all <h1> elements?
+
+ h1.all {background-color:#FFFFFF;}
+ h1 {background-color:#FFFFFF;}       *true
+ all.h1 {background-color:#FFFFFF;}
+ 
+33. Which CSS property is used to change the text color of an element?
+
+ text-color       
+ fgcolor
+ color       *true
+ 
+34. Which CSS property controls the text size?
+
+ text-size
+ font-size       *true
+ font-style
+ text-style
+ 
+35. Which property is used to change the font of an element?
+
+ font-family
+ Both font-family and font can be used       *true
+ font
+ 
+36. How do you make the text bold?
+
+ font-weight: bold;       *true
+ font:bold;
+ style:bold;
+ 
+38. How do you display a border like this:
+The top border = 10 pixels
+The bottom border = 5 pixels
+The left border = 20 pixels
+The right border = 1pixel?
+
+ border-width:10px 5px 20px 1px;       *true
+ border-width:10px 1px 5px 20px;
+ border-width:5px 20px 10px 1px;
+ border-width:10px 20px 5px 1px;
+ 
+39. Which property is used to change the left margin of an element?
+
+ padding-left
+ margin-left       *true
+ indent
+ 
+40. How do you select an element with id "demo"?
+
+ .demo
+ *demo
+ demo
+ #demo       *true
+
+41. How do you select elements with class name "test"?
+
+ #test
+ *test
+ .test       *true
+ test
+ 
+42. How do you select all p elements inside a div element?
+
+ div + p
+ div.p
+div p       *true
+
+less then 15 minutes
